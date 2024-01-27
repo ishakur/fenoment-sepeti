@@ -1,0 +1,525 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Fenocity",
+        "description": "Fenocity",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/categories": {
+            "get": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Category List",
+                "description": "Category List",
+                "operationId": "ac9c4d978ea4e5b72915ca9728e5b8b1",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "id": 1,
+                                                "category_name": "Sport",
+                                                "slug": "sport",
+                                                "category_up": 0,
+                                                "category_rank": 0,
+                                                "category_icon": "icon",
+                                                "category_status": 1
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/influencers": {
+            "get": {
+                "tags": [
+                    "Influencer"
+                ],
+                "summary": "Influencer List",
+                "description": "Influencer List",
+                "operationId": "6c943a12aa309903de9bb007a6b47202",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "user": {
+                                                    "userID": 1,
+                                                    "nameSurname": "Faruk api",
+                                                    "email": "faruk@faruk.com",
+                                                    "phoneNumber": "5321234567",
+                                                    "profilePhoto": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+                                                    "userType": "Admin",
+                                                    "balance": "99999.00",
+                                                    "lastLoginDate": "2022-12-30 19:04:56",
+                                                    "registerDate": "2022-12-30 19:04:56"
+                                                },
+                                                "bannerPhoto": null,
+                                                "fenocityPoint": "5.00",
+                                                "fenocitySaleCount": 620,
+                                                "taxPayer": 1
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/getInfluencerByCategory/{category}": {
+            "get": {
+                "tags": [
+                    "Influencer"
+                ],
+                "summary": "Influencer List By Category",
+                "description": "Influencer List By Category",
+                "operationId": "0f198dcfbe3615cc9c717ab51efc207e",
+                "parameters": [
+                    {
+                        "name": "category",
+                        "in": "path",
+                        "description": "categoyID",
+                        "required": true,
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": [
+                                                {
+                                                    "userID": 1,
+                                                    "infID": 1,
+                                                    "platformUserName": "estell.greenfelder",
+                                                    "fenocitySaleCount": 884,
+                                                    "nameSurname": "Faruk api",
+                                                    "email": "faruk@faruk.com",
+                                                    "profilePhoto": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+                                                    "userType": "Admin"
+                                                },
+                                                {
+                                                    "userID": 6,
+                                                    "infID": 6,
+                                                    "platformUserName": "hertha.sawayn",
+                                                    "fenocitySaleCount": 942,
+                                                    "nameSurname": "Miss Helena Schaden Sr.",
+                                                    "email": "jayne52@example.org",
+                                                    "profilePhoto": null,
+                                                    "userType": "Influencer"
+                                                },
+                                                {
+                                                    "userID": 8,
+                                                    "infID": 8,
+                                                    "platformUserName": "weimann.drew",
+                                                    "fenocitySaleCount": 509,
+                                                    "nameSurname": "Sheridan Mayert",
+                                                    "email": "reinger.jadon@example.org",
+                                                    "profilePhoto": null,
+                                                    "userType": "Influencer"
+                                                },
+                                                {
+                                                    "userID": 9,
+                                                    "infID": 9,
+                                                    "platformUserName": "baylee10",
+                                                    "fenocitySaleCount": 647,
+                                                    "nameSurname": "Mr. Eldred Hane PhD",
+                                                    "email": "katherine.blanda@example.org",
+                                                    "profilePhoto": null,
+                                                    "userType": "Influencer"
+                                                },
+                                                {
+                                                    "userID": 12,
+                                                    "infID": 12,
+                                                    "platformUserName": "nchamplin",
+                                                    "fenocitySaleCount": 555,
+                                                    "nameSurname": "Gertrude Yundt",
+                                                    "email": "willms.chadrick@example.net",
+                                                    "profilePhoto": null,
+                                                    "userType": "Influencer"
+                                                },
+                                                {
+                                                    "userID": 14,
+                                                    "infID": 14,
+                                                    "platformUserName": "keith.ryan",
+                                                    "fenocitySaleCount": 538,
+                                                    "nameSurname": "Beaulah Emard",
+                                                    "email": "daniel.maximo@example.net",
+                                                    "profilePhoto": null,
+                                                    "userType": "Influencer"
+                                                },
+                                                {
+                                                    "userID": 15,
+                                                    "infID": 15,
+                                                    "platformUserName": "ymueller",
+                                                    "fenocitySaleCount": 701,
+                                                    "nameSurname": "Jerry Kuvalis DDS",
+                                                    "email": "turner24@example.org",
+                                                    "profilePhoto": null,
+                                                    "userType": "Influencer"
+                                                },
+                                                {
+                                                    "userID": 18,
+                                                    "infID": 18,
+                                                    "platformUserName": "candice99",
+                                                    "fenocitySaleCount": 111,
+                                                    "nameSurname": "Mr. Terrence McClure",
+                                                    "email": "elbert79@example.org",
+                                                    "profilePhoto": null,
+                                                    "userType": "Influencer"
+                                                },
+                                                {
+                                                    "userID": 27,
+                                                    "infID": 27,
+                                                    "platformUserName": "ybreitenberg",
+                                                    "fenocitySaleCount": 557,
+                                                    "nameSurname": "Dr. Adelbert Yost III",
+                                                    "email": "dbednar@example.com",
+                                                    "profilePhoto": null,
+                                                    "userType": "Influencer"
+                                                }
+                                            ]
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Influencers listed successfully"
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Login",
+                "description": "Login",
+                "operationId": "f74109d26aab35daab2d8c617c97c3fa",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "email": "faruk@faruk.com",
+                                    "password": "secret"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": {
+                                                "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjcxOTk3Mzk0LCJleHAiOjE2NzIwMDA5OTQsIm5iZiI6MTY3MTk5NzM5NCwianRpIjoiSzZmMERWMm9XcVJPWHczeiIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInVzZXJJRCI6MSwidXNlclR5cGUiOiJBZG1pbiJ9.Hfv_vnu7-eYWNeHzi1KTn1sFgj-5uJTbj6RYqeTz10k",
+                                                "token_type": "bearer",
+                                                "expires_in": 3600,
+                                                "emailVerify": true
+                                            }
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Login successfully"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Email or Password is incorrect",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Email or Password is incorrect"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Email or Password is incorrect",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Your account is banned"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Register"
+                ],
+                "summary": "Login",
+                "description": "->User Kaydı İçin Gerekli Alanlar: nameSurname, email, password, phoneNumber,\n         *     profilePhoto(null olabilir), userType;\n         *     ->CorpAdvertiser Kaydı İçin Gerekli Alanlar: nameSurname, email, password, phoneNumber,\n         *     profilePhoto(null olabilir), userType, corpAdvName, corpAdvAddress,taxNumber;\n         *     ->Influencer Kaydı İçin Gerekli Alanlar: nameSurname, email, password, phoneNumber, profilePhoto(null\n         *     olabilir), userType, categories(dizi tipinde), platformUserName, bannerPhoto(null olabilir), taxPayer;\n         *     ->Agency Kaydı İçin Gerekli Alanlar: nameSurname, email, password, phoneNumber, profilePhoto(null\n         *     olabilir), userType, agencyName, agencyAddress, taxNumber;",
+                "operationId": "f9ddb48d31411767b13157de000a7836",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "userType": {
+                                        "type": "string"
+                                    },
+                                    "nameSurname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string"
+                                    },
+                                    "profilePhoto": {
+                                        "type": "string"
+                                    },
+                                    "agencyID": {
+                                        "type": "integer"
+                                    },
+                                    "platformUserName": {
+                                        "type": "string"
+                                    },
+                                    "bannerPhoto": {
+                                        "type": "string"
+                                    },
+                                    "taxPayer": {
+                                        "type": "boolean"
+                                    },
+                                    "corpAdvName": {
+                                        "type": "string"
+                                    },
+                                    "corpAdvAddress": {
+                                        "type": "string"
+                                    },
+                                    "agencyName": {
+                                        "type": "string"
+                                    },
+                                    "agencyAddress": {
+                                        "type": "sting"
+                                    },
+                                    "taxNumber": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "userType": "Influencer",
+                                    "nameSurname": "danla bilic",
+                                    "email": "danla@gmail.com",
+                                    "password": "sEcret123*",
+                                    "password_confirmation": "sEcret123*",
+                                    "phoneNumber": "5321234567",
+                                    "profilePhoto": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+                                    "platformUserName": "danlabilic",
+                                    "bannerPhoto": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+                                    "taxPayer": true,
+                                    "corpAdvName": "danla bilic",
+                                    "corpAdvAddress": "danla bilic",
+                                    "agencyName": "danla bilic",
+                                    "agencyAddress": "danla bilic",
+                                    "taxNumber": "JSEGHFJKSH123SDDFJ"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "message": {
+                                                    "type": "string",
+                                                    "example": "Register successfully"
+                                                },
+                                                "success": {
+                                                    "type": "boolean",
+                                                    "example": true
+                                                }
+                                            },
+                                            "type": "object",
+                                            "example": {
+                                                "user": {
+                                                    "userID": 32,
+                                                    "nameSurname": "danla bilic",
+                                                    "email": "danla@gmail.com",
+                                                    "phoneNumber": "5442276917",
+                                                    "profilePhoto": null,
+                                                    "userType": "Influencer",
+                                                    "balance": "0.00",
+                                                    "lastLoginDate": "2022-12-27 19:07:30",
+                                                    "registerDate": "2022-12-27 19:07:30"
+                                                },
+                                                "bannerPhoto": null,
+                                                "fenocityPoint": "0.00",
+                                                "fenocitySaleCount": 0,
+                                                "taxPayer": 1,
+                                                "categories": {
+                                                    "category_id": 1,
+                                                    "category_name": "Sport",
+                                                    "category_up": 0,
+                                                    "category_rank": 0,
+                                                    "category_icon": "icon"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/data.json": {
+            "get": {
+                "operationId": "97804bb53dd33451e1ddcb2153945883",
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/refreshToken": {
+            "get": {
+                "tags": [
+                    "Refresh Token"
+                ],
+                "summary": "refresh jwt token",
+                "operationId": "a38fa637e8f76d280520a5a02652d261",
+                "responses": {
+                    "200": {
+                        "description": "success.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZnJlc2hUb2tlbiIsImlhdCI6MTY3NTMyNTc4NiwiZXhwIjoxNjc1MzI5Mzk2LCJuYmYiOjE2NzUzMjU3OTYsImp0aSI6IkJ0WDlxemlDUldjeU1sSVIiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJ1c2VySUQiOjEsInVzZXJUeXBlIjoiQWRtaW4ifQ.HgAbeekGpq1eGvW5VNacQGovBhY5Pv15qhne4FKgLfI"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "token refreshed successfully"
+                                        },
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "An error has occurred."
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearer_token": {
+                "type": "apiKey",
+                "description": "Enter token in format (Bearer <token>)",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    }
+}
